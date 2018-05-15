@@ -1,0 +1,48 @@
+{
+  "name": "hystrixjs_decorator",
+  "version": "1.0.0",
+  "main": "lib/hystrix_decorator.js",
+  "types": "lib/hystrix_decorator.d.ts",
+  "license": "MIT",
+  "author": {
+  "name": "Davi de Carvalho",
+  "email": "davi_carvalho96@hotmail.com",
+  "url": "https://github.com/DavideCarvalho"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavideCarvalho/hystrixjsDecorator"
+  },
+  "bugs": {
+    "url": "https://github.com/DavideCarvalho/hystrixjsDecorator/issues"
+  },
+  "devDependencies": {
+    "@types/hystrixjs": "^0.2.0",
+    "@types/jest": "^22.2.3",
+    "jest": "^22.4.3",
+    "source-map-support": "^0.5.6",
+    "ts-jest": "^22.4.6",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "hystrixjs": "^0.2.0",
+    "rxjs": "^6.1.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "modulePathIgnorePatterns": [
+      "/lib/"
+    ]
+  }
+}
