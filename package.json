@@ -1,6 +1,6 @@
 {
   "name": "hystrixjs_decorator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/hystrix_decorator.js",
   "types": "lib/hystrix_decorator.d.ts",
   "license": "MIT",

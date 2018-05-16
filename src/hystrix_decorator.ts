@@ -20,7 +20,6 @@ type hystrixDecoratorType = {
 const Hystrix = (hystrixObject: hystrixDecoratorType) => {
   let serviceCommand;
   return (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-    console.log(target);
     if (!serviceCommand) {
       const decoratedMethod = descriptor.value;
       serviceCommand = commandFactory.getOrCreate('propertyKey');
