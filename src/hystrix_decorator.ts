@@ -16,13 +16,17 @@ type hystrixDecoratorType = {
   fallbackTo?: string
 }
 
+type targetObject = {
+  [key: string]: any
+}
+
 
 const Hystrix = (hystrixObject: hystrixDecoratorType) => {
-  let serviceCommand;
-  return (target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
+  let serviceCommand: any;
+  return (target: targetObject, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
     if (!serviceCommand) {
       const decoratedMethod = descriptor.value;
-      serviceCommand = commandFactory.getOrCreate('propertyKey');
+      serviceCommand = commandFactory.getOrCreate(propertyKey);
       serviceCommand.run(decoratedMethod);
       if (hystrixObject.circuitBreakerSleepWindowInMilliseconds) serviceCommand.circuitBreakerSleepWindowInMilliseconds(hystrixObject.circuitBreakerSleepWindowInMilliseconds);
       if (hystrixObject.errorHandler) serviceCommand.errorHandler(target[hystrixObject.errorHandler]);
